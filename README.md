@@ -3,11 +3,11 @@
 
 ---
 
-## 1º Periodo
+### 1º Periodo
 
-### ✨ [Projeto Website Estático (PWE)](https://github.com/ArthurZ7/website-estatico) 
+#### ✨ [Projeto Website Estático (PWE)](https://github.com/ArthurZ7/website-estatico) 
 Sites desenvolvidos com HTML e CSS
-### 💡 [Lógica de Programacão - Códigos Becrowd/URI](https://github.com/ArthurZ7/Java-Beecrowd)
+#### 💡 [Lógica de Programacão - Códigos Becrowd/URI](https://github.com/ArthurZ7/Java-Beecrowd)
 Soluções de problemas de lógica em JAVA
 
 ---
