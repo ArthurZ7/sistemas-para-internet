@@ -1,4 +1,4 @@
-# 👨🏻‍💻 Sistemas para Internet
+## 👨🏻‍💻 Sistemas para Internet
 #### Repositório para as disciplinas do curso de Sistemas para Internet - IFTM
 
 ---
@@ -12,10 +12,10 @@ Soluções de problemas de lógica em JAVA
 
 ---
 
-## 2º Periodo
+### 2º Periodo
 
-### 📐 [JavaScript Básico]()
-###  [POO 1]()
-###  [Algoritmos]()
-###  [Projeto Sistema Web MVC e SQL]()
+#### 📐 [JavaScript Básico]()
+####  [POO 1]()
+####  [Algoritmos]()
+####  [Projeto Sistema Web MVC e SQL]()
   
