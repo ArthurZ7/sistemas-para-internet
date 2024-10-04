@@ -6,6 +6,8 @@ Repositório para as disciplinas do curso de Sistemas para Internet - IFTM
 ### ✨[Projeto Website Estático (PWE)](https://github.com/ArthurZ7/website-estatico) - Sites HTML e CSS
 ### 💡Lógica de Programacão - [Códigos Becrowd/URI](https://github.com/ArthurZ7/Java-Beecrowd)
 
+---
+
 ## 2º Periodo
 
 #### Disciplinas:
