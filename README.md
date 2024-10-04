@@ -1,6 +1,8 @@
 # 👨🏻‍💻 Sistemas para Internet
 Repositório para as disciplinas do curso de Sistemas para Internet - IFTM
 
+<br><br>
+
 ## 1º Periodo
 
 ### ✨ [Projeto Website Estático (PWE)](https://github.com/ArthurZ7/website-estatico) 
