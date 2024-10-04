@@ -16,6 +16,6 @@ Soluções de problemas de lógica em JAVA
 
 #### 📐 [JavaScript Básico]()
 #### 📦 [Programação Orientada a Objetos 1]()
-####  [Algoritmos]()
-####  [Projeto Sistema Web MVC e SQL]()
+#### 🛠️ [Algoritmos e Programação]()
+#### 🗺️ [Projeto Sistema Web MVC e SQL]()
   
