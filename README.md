@@ -15,7 +15,7 @@ Soluções de problemas de lógica em JAVA
 ### 2º Periodo
 
 ### 📐 [JavaScript Básico]()
-### 📦 [Programação Orientada a Objetos 1]()
+### 📦 [Programação Orientada a Objetos 1](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/2-periodo/poo1)
 ### 🛠️ [Algoritmos e Programação]()
 ### 🗺️ [Projeto Sistema Web MVC e SQL]()
   
