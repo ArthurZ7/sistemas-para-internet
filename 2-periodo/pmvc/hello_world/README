@@ -1,0 +1,12 @@
+## Criação projeto Maven
+
+### src/main/resources/ 
+#### /static/
+Páginas Web estáticas
+
+#### /templates/
+Páginas Web Dinâmicas
+
+### Criação Controller
+Conectar o Spring Boot a página Web, ("/hello") - pagina HTML dinâmica
+
