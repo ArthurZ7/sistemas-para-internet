@@ -1,0 +1,4 @@
+b) Coloque o atributo nome como privativo e execute o programa. O que acontece?
+Explique.
+
+R= O programa não encontra a variável "nome", como ela está privada, a única forma de receber o valor da variavel é atrávez do método get ou de altera-lá com o método set
