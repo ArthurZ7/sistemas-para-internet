@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<html>
+    <body>
+        <form th:action="@{${'/novo'}}" th:object="${usuario}" method="post">
+            <label>Nome:</label>
+            <input type="text" th:field="*{nome}" required />
+            
+            <label>Login:</label>
+            <input type="text" th:field="*{login}" required />
+
+            <label>Senha:</label>
+            <input type="password" th:field="*{senha}" required />
+            
+            <label>Administrador:</label>
+            <input type="checkbox" th:field="*{administrador}" />
+
+            <button type="submit">Salvar</button>
+        </form>
+    </body>
+</html>
