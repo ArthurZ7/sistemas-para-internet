@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.boxBoy {
+    width: 180px;
+    text-align: center;
+}
+
+@keyframes moveAlegre {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(40px);
+    }
+    100% {
+        transform: translateX(-40px);
+    }
+  }
+  
+  .moveAlegre {
+    animation: moveAlegre 1s infinite;
+  }
+
+@keyframes moveNervoso {
+    0% {
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+  }
+  
+  .moveNervoso {
+    animation: moveNervoso 0.1s infinite;
+  }

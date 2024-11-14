@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif, arial;
+}
+
+.candidatos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.candidatos h1 {
+  color: rgb(172, 7, 7);
+  font-size: 25px;
+}
+
+.candidato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.candidato > div {
+  text-align: center;
+  border: 5px solid black;
+  background-color: rgb(196, 214, 156);
+}
+
+.candidato img {
+  width: 300px;
+  height: 300px;
+  margin: 0 20px;
+}
+
+.candidato p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.candidato .voto{
+  color: rgb(172, 7, 7);
+  font-size: 30px;
+}
+
+.candidato:hover > div {
+  background-color: rgb(176, 192, 140);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
