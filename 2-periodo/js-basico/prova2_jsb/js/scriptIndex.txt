@@ -1,0 +1,64 @@
+window.addEventListener("DOMContentLoaded", function () {
+
+var nome = document.getElementById("nome")
+var sobreNome = document.getElementById("sobreNome")
+var idade = document.getElementById("idade")
+var btn_cadastrar = document.getElementById("btn-cadastrar")
+var btn_limpar = document.getElementById("btn-limpar")
+var txt_status = document.getElementById("txt-status")
+var img = document.getElementById("img-status")
+
+
+btn_cadastrar.addEventListener("click", function () {
+    var valNome = nome.value;
+    var valSobrenome = sobreNome.value;
+    var valIdade = idade.value;
+
+    var nomeCompleto = valNome + " " + valSobrenome;
+    nomeCompleto = nomeCompleto.toUpperCase();
+    
+    nome.addEventListener("click", function() {
+        txt_status.innerHTML = "* Favor preencher todos os campos acima"
+        img.setAttribute('src', 'img/erro.png');
+    });
+    sobreNome.addEventListener("click", function() {
+        txt_status.innerHTML = "* Favor preencher todos os campos acima"
+        img.setAttribute('src', 'img/erro.png');
+    });
+    
+    if (valNome == "" || valSobrenome == "") {
+        msgErro();
+        txt_status.innerHTML = "Nome e sobrenome devem ser informados"
+    } else if (valIdade == 0) {
+        msgErro();
+        txt_status.innerHTML = "Selecione a sua faixa etária"
+    } else if (valIdade == 1 || valIdade == 2) {
+        txt_status.innerHTML = nomeCompleto.toUpperCase() + " você não tem idade suficiente"
+        msgErro();
+    } else{
+        txt_status.innerHTML = "Processando. Aguarde (5 segundos)"
+        img.setAttribute('src', 'img/processando.gif');
+        txt_status.style.color = "blue";
+        
+        var usuarioB3 = {nomeCompleto: nomeCompleto, idade: valIdade};
+        localStorage.setItem("usuarioB3", JSON.stringify(usuarioB3));
+        
+        function redireciona() {
+            window.location.href = "./processa.html"
+        }
+        setTimeout(redireciona, 5000);
+    }
+});
+
+btn_limpar.addEventListener("click", function (){
+    nome.value = "";
+    sobreNome.value = "";
+    idade.value = "0";
+})
+
+function msgErro () {
+    img.setAttribute('src', 'img/erro.png');
+    txt_status.style.color = "darkred";
+ }
+
+});

@@ -1,0 +1,36 @@
+window.addEventListener("DOMContentLoaded", function () {
+
+var txt_nome = document.getElementById("nome")
+var txt_user = document.getElementById("txt-user")
+var txt_tipo = document.getElementById("txt-tipo")
+
+if (localStorage.getItem("usuarioB3") === null) {
+    window.location.href = "./usuarioNaoCadastrado.html"
+}
+
+var user = localStorage.getItem("usuarioB3");
+user = JSON.parse(user);
+
+txt_nome.innerHTML = user.nomeCompleto;
+
+var vetNome= user.nomeCompleto.split(" ");
+var primeiroNome = vetNome[0]
+var segundoNome = vetNome[1]
+
+var senha = primeiroNome.substr(0, 1) + segundoNome.substr(0, 1);
+
+
+txt_user.innerHTML = "Usuário: " + primeiroNome + "<br>Senha: " + senha;
+
+var idade = user.idade;
+
+if (idade == 3) {
+    txt_tipo.innerHTML = "Tipo de aplicação sugerida: Renda Fixa";
+} else if (idade == 4) {
+    txt_tipo.innerHTML = "Tipo de aplicação sugerida: Ações";
+} else{
+    txt_tipo.innerHTML = "Tipo de aplicação sugerida: Fundo de Investimento Imobiliário";
+}
+
+
+});
