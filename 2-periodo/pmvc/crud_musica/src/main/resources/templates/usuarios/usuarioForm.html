@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulário de Usuário</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- <h1 th:text="${usuario.codigo != 0 ? 'Editar Usuário' : 'Novo Usuário'}">Formulário de Usuário</h1> -->
+
+        <form th:action="@{/usuarios/novo}" th:object="${usuarios}" method="post">   
+            <div>
+                <label for="codigo">Código:</label>
+                <input type="text" th:field="*{codigo}" id="codigo" th:readonly="true" />
+            </div>
+ 
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" th:field="*{nome}" id="nome" placeholder="Digite o nome" required />
+            </div>
+            
+            <div>
+                <label for="data_nasc">Data de nascimento:</label>
+                <input type="text" th:field="*{data_nasc}" id="data_nasc" required />
+            </div>
+            
+            <div>
+                <label for="endereco">Endereço:</label>
+                <input type="text" th:field="*{endereco}" id="endereco" placeholder="Digite o endereço" required />
+            </div>
+            
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" th:field="*{email}" id="email" placeholder="Digite o email" required />
+            </div>
+
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" th:field="*{senha}" id="senha" placeholder="Digite a senha" required />
+            </div>
+
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

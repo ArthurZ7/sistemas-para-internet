@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Músicas</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Músicas</h1>
+
+        <div th:if="${mensagem}">
+            <p th:text="${mensagem}"></p>
+        </div>
+
+        <div class="actions">
+            <a href="#" th:href="@{/musicas/novo}" class="btn">Adicionar nova Música</a>
+        
+            <form th:action="@{/musicas/buscar}" method="get" class="search-form">
+                <input type="text" name="titulo" placeholder="Buscar por título" required/>
+                <button type="submit" class="btn">Buscar</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Ano de Lançamento</th>
+                    <th>Duração (segundos)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="musica : ${musicas}">
+                    <td th:text="${musica.codigo}"></td>
+                    <td th:text="${musica.titulo}"></td>
+                    <td th:text="${musica.ano_lancamento}"></td>
+                    <td th:text="${musica.duracao}"></td>
+                    <td>
+                        <a th:href="@{/musicas/editar/{codigo}(codigo=${musica.codigo})}" class="btn">Editar</a>
+                        <form th:action="@{/musicas/excluir/{codigo}(codigo=${musica.codigo})}" method="post" style="display:inline;">
+                            <button type="submit" class="btn">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

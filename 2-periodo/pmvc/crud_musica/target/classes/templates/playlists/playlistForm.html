@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulário de Playlist</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- <h1 th:text="${playlist.codigo != null ? 'Editar Playlist' : 'Nova Playlist'}">Formulário de Playlist</h1> -->
+
+        <form th:action="@{/playlists/novo}" th:object="${playlist}" method="post">   
+            <div>
+                <label for="codigo">Código:</label>
+                <input type="text" th:field="*{codigo}" id="codigo" readonly />
+            </div>
+ 
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" th:field="*{nome}" id="nome" placeholder="Digite o nome" required />
+            </div>
+            
+            <div>
+                <label for="musicas">Músicas:</label>
+                <select th:field="*{musicas}" id="musicas" multiple required>
+                    <option th:each="musica : ${musicasDisponiveis}" 
+                            th:value="${musica.codigo}" 
+                            th:text="${musica.titulo}" 
+                            th:selected="${playlist.musicas != null and playlist.musicas.contains(musica)}">
+                    </option>
+                </select>
+                <p>Pressione Ctrl ou Shift para selecionar várias músicas</p>
+            </div>
+            
+            <div>
+                <label for="usuario">Usuário:</label>
+                <select th:field="*{usuario.codigo}" id="usuario" required>
+                    <option th:each="usuario : ${usuarios}" 
+                            th:value="${usuario.codigo}" 
+                            th:text="${usuario.nome}" 
+                            th:selected="${playlist.usuario != null and playlist.usuario.codigo == usuario.codigo}">
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

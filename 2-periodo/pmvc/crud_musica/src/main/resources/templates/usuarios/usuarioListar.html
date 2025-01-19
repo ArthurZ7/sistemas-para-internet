@@ -1,0 +1,57 @@
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Usuários</h1>
+
+        <div th:if="${mensagem}">
+            <p th:text="${mensagem}"></p>
+        </div>
+
+        <div class="actions">
+            <a href="#" th:href="@{/usuarios/novo}" class="btn">Adicionar novo Usuário</a>
+        
+            <form th:action="@{/usuarios/buscar}" method="get" class="search-form">
+                <input type="text" name="nome" placeholder="Buscar por nome" required/>
+                <button type="submit" class="btn">Buscar</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Data nascimento</th>
+                    <th>Endereço</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.codigo}">Código</td>
+                    <td th:text="${usuario.nome}">Nome</td>
+                    <td th:text="${usuario.data_nasc}">Data de nascimento</td>
+                    <td th:text="${usuario.endereco}">Endereço</td>
+                    <td th:text="${usuario.email}">Email</td>
+
+                    <td>
+                        <a th:href="@{/usuarios/editar/{codigo}(codigo=${usuario.codigo})}" class="btn btn-edit">Editar</a>
+                    
+                        <form th:action="@{/usuarios/excluir/{codigo}(codigo=${usuario.codigo})}" method="post" th:onsubmit="return confirm('Tem certeza que deseja excluir?');" style="display:inline;">
+                        
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

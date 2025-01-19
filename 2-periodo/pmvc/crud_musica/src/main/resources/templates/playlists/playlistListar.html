@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Playlists</h1>
+
+        <div th:if="${mensagem}">
+            <p th:text="${mensagem}"></p>
+        </div>
+
+        <div class="actions">
+            <a href="#" th:href="@{/playlists/novo}" class="btn">Adicionar nova Playlist</a>
+        
+            <form th:action="@{/playlists/buscar}" method="get" class="search-form">
+                <input type="text" name="nome" placeholder="Buscar por nome" required />
+                <button type="submit" class="btn">Buscar</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Quantidade de Músicas</th>
+                    <th>Músicas</th>
+                    <th>Usuário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="playlist : ${playlists}">
+                    <td th:text="${playlist.codigo}">Código</td>
+                    <td th:text="${playlist.nome}">Nome</td>
+                    <td th:text="${playlist.musicas.size()}">Quantidade de Músicas</td>
+                    <td>
+                        <ul>
+                            <li th:each="musica : ${playlist.musicas}" th:text="${musica.titulo}"></li>
+                        </ul>
+                    </td>
+                    <td th:text="${playlist.usuario != null ? playlist.usuario.nome : 'Usuário não atribuído'}">Usuário</td>
+                    <td>
+                        <a th:href="@{/playlists/editar/{codigo}(codigo=${playlist.codigo})}" class="btn btn-edit">Editar</a>
+                        <form th:action="@{/playlists/excluir/{codigo}(codigo=${playlist.codigo})}" method="post" 
+                              th:onsubmit="return confirm('Tem certeza que deseja excluir?');" style="display:inline;">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
