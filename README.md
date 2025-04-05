@@ -24,7 +24,7 @@ Soluções de problemas de lógica em JAVA
 
 ### 3º Periodo
 
-### 📐 [Projeto Front-end Javascript](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/)
-### 📦 [Programação Orientada a Objetos 2](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/)
+### 📐 [Projeto Front-end Javascript](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/pfjs)
+### 📦 [Programação Orientada a Objetos 2](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/poo2)
 ### 🛠️ [Testes Automatizados](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/)
 ### 🗺️ [Banco de Dados Avançado](https://github.com/ArthurZ7/sistemas-para-internet/tree/main/3-periodo/)
