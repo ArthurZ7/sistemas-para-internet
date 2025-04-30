@@ -1,0 +1,12 @@
+.cat {
+    width: 200px;
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+
+.cat:hover {
+    transform: scale(2);
+    transition: transform 0.2s;
+    cursor: pointer;
+
+}
